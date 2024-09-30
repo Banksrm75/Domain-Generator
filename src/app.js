@@ -10,16 +10,15 @@ window.onload = function() {
   let adj = ["great", "big"];
   let noun = ["jogger", "racoon"];
 
+  let domain = [];
   for (let pronounIndex = 0; pronounIndex < pronoun.length; pronounIndex++) {
     for (let adjIndex = 0; adjIndex < adj.length; adjIndex++) {
       for (let nounIndex = 0; nounIndex < noun.length; nounIndex++) {
-        console.log(
-          pronoun[pronounIndex],
-          adj[adjIndex],
-          noun[nounIndex],
-          ".com"
-        );
+        let currentDomain =
+          pronoun[pronounIndex] + adj[adjIndex] + noun[nounIndex] + ".com, ";
+        domain += currentDomain;
       }
     }
   }
+  document.querySelector(".domainGenerator").innerHTML = domain;
 };
